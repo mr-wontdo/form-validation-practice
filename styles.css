@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+}
+
+:root {
+    --mint-jade: #cfddbb;
+}
+
+body {
+    background-color: var(--mint-jade);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+input {
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 6px 12px;
+}
+
+input:focus {
+    outline: 1px solid black;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-family: inherit;
+}
