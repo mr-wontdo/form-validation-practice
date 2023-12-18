@@ -4,32 +4,37 @@
         <meta charset="UTF-8">
         <title>Form Validation Practice</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="javascript.js"></script>
+        <script src="javascript.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <form>
+        <form novalidate>
             <div class="form-row">
                 <label for="user_email">Email</label>
-                <input type="email" id="user_email" name="email" placeholder="johndoe@example.com">
+                <input type="email" id="user_email" name="email" placeholder="johndoe@example.com" required>
+                <span class="error user_email"></span>
             </div>
             <div class="form-row">
                 <label for="country">Country</label>
-                <input type="text" id="country" name="country">
+                <input type="text" id="country" name="country" required>
+                <span class="error country"></span>
             </div>
             <div class="form-row">
                 <label for="zip_code">Zip Code</label>
-                <input type="number" id="zip_code" name="zip_code">
+                <input type="number" id="zip_code" name="zip_code" required>
+                <span class="error zip_code"></span>
             </div>
             <div class="form-row">
                 <label for="user_password">Password</label>
-                <input type="password" id="user_password" name="user_password">
+                <input type="password" id="user_password" name="user_password" required>
+                <span class="error user_password"></span>
             </div>
             <div class="form-row">
                 <label for="confirm_user_password">Confirm Password</label>
-                <input type="password" id="confirm_user_password" name="confirm_user_password">
+                <input type="password" id="confirm_user_password" name="confirm_user_password" required>
+                <span class="error confirm_user_password"></span>
             </div>
             <div class="button-row">
                 <button type="submit">Submit</button>
