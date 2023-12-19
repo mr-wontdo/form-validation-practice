@@ -90,6 +90,17 @@ const errorHandler = () => {
         }
     };
 
+    // Show error when focusing out of inputs
+    email.addEventListener('focusout', () => {
+        showEmailError();
+    });
+    country.addEventListener('focusout', () => {
+        showCountryError();
+    });
+    zipCode.addEventListener('focusout', () => {
+        showZipCodeError();
+    });
+
     return { checkFormValidity, showErrors };
 };
 
