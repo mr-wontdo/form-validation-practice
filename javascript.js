@@ -16,6 +16,14 @@ const errorHandler = () => {
         else return false;
     };
 
+    const showErrors = () => {
+        showEmailError();
+        showCountryError();
+        showZipCodeError();
+        showPasswordError();
+        showConfirmPasswordError();
+    };
+
     // DOM changes
     const showEmailError = () => {
         const emailError = document.querySelector('span.error.user_email');
