@@ -74,7 +74,10 @@ const errorHandler = () => {
 
     const showConfirmPasswordError = () => {
         const confirmPasswordError = document.querySelector('span.error.confirm_user_password');
-        if (confirmPassword.validity.valueMissing && !password.validity.valueMissing) {
+        if (password.validity.valueMissing) {
+            confirmPassword.classList.remove('invalid');
+            confirmPasswordError.textContent = '';
+        } else if (confirmPassword.validity.valueMissing && !password.validity.valueMissing) {
             confirmPassword.classList.add('invalid');
             confirmPasswordError.textContent = 'Please confirm your password!';
         } else if (password.value !== confirmPassword.value) {
@@ -86,6 +89,8 @@ const errorHandler = () => {
             confirmPasswordError.textContent = '';
         }
     };
+
+    return { checkFormValidity, showErrors };
 };
 
-errorHandler();
+const error = errorHandler();
