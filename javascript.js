@@ -1,5 +1,26 @@
-const errorHandler = () => {
+const submissionHandler = (() => {
     const form = document.querySelector('form');
+    const submission = document.querySelector('.submission')
+    const returnButton = document.querySelector('.submission button');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (error.checkFormValidity()) {
+            error.showErrors();
+        } else {
+            submission.removeAttribute('style');
+            form.style.display = 'none';
+        }
+    });
+
+    returnButton.addEventListener('click', () => {
+        form.reset();
+        form.removeAttribute('style');
+        submission.style.display = 'none';
+    });
+})();
+
+const errorHandler = () => {
     const email = document.querySelector('input#user_email');
     const country = document.querySelector('input#country');
     const zipCode = document.querySelector('input#zip_code');
