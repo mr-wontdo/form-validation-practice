@@ -10,6 +10,7 @@ const submissionHandler = (() => {
         } else {
             submission.removeAttribute('style');
             form.style.display = 'none';
+            error.showErrors();
         }
     });
 
