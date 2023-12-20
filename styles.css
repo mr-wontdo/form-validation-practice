@@ -6,7 +6,10 @@
 }
 
 :root {
+    --ivory-sand: #f0e9d3;
     --mint-jade: #cfddbb;
+    --validation-blue: #2873ec;
+    --validation-red: #c80000;
 }
 
 body {
@@ -37,13 +40,38 @@ label {
 input {
     border: none;
     border-radius: 8px;
+    box-shadow: 2px 2px 2px gray;
     font-family: inherit;
     font-size: 1.2rem;
+    outline: none;
     padding: 6px 12px;
+    height: 40px;
+    width: 400px;
 }
 
 input:focus {
-    outline: 1px solid black;
+    border: 2px solid var(--validation-blue);
+    padding: 4px 10px;
+}
+
+input.invalid:invalid {
+    border: 1px solid var(--validation-red);
+    padding: 5px 11px;
+}
+
+input.invalid:invalid:focus {
+    border-width: 2px;
+    padding: 4px 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error {
+    color: var(--validation-red);
 }
 
 .button-row {
@@ -51,6 +79,49 @@ input:focus {
     justify-content: center;
 }
 
-button {
+.button-row button {
+    background-color: var(--ivory-sand);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px gray;
     font-family: inherit;
+    font-size: 1.5rem;
+    padding: 8px 24px;
+}
+
+button:hover {
+    background-color: #ece3c2;
+}
+
+button:focus {
+    outline: 1px solid black;
+}
+
+/* Submission */
+.submission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.submission p {
+    font-size: 2rem;
+}
+
+.submission button {
+    background-color: var(--ivory-sand);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px gray;
+    font-family: inherit;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+}
+
+.submission button:hover {
+    background-color: #ece3c2;
 }
